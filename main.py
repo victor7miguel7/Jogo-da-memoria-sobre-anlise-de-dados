@@ -83,7 +83,7 @@ def desenha_tabuleiro(tabuleiro, visivel):
 
 def desenha_texto(janela, texto, pos):
     """Função para desenhar texto com várias linhas na janela do Pygame."""
-    largura_max = 600  # Defina a largura máxima para o texto
+    largura_max = 600  # Define a largura máxima para o texto
     linhas = quebra_texto(texto, fonte, largura_max)
     for i, linha in enumerate(linhas):
         superficie_texto = fonte.render(linha.strip(), True, (255, 255, 255))
@@ -164,11 +164,11 @@ def jogo_da_memoria():
         desenha_texto(janela, mensagem_atual, (570, 10))  # Exibe a mensagem na tela
         pygame.display.update()
 
-        if pares_encontrados == (tamanho**2 // 2):
-            mensagem_atual = f"Parabéns! Você encontrou todos os pares em {tentativas} tentativas."
-            desenha_texto(janela, mensagem_atual, (410, 10))
+        if pares_encontrados == (10):
+            mensagem_atual = f"PARABÉNS! Você encontrou todos os pares em {tentativas} tentativas."
+            desenha_texto(janela, mensagem_atual, (570, 400))
             pygame.display.update()
-            pygame.time.wait(3000)  # Espera 3 segundos antes de fechar
+            pygame.time.wait(15000)  # Espera 15 segundos antes de fechar
             rodando = False
 
     pygame.quit()
